@@ -2,99 +2,124 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { 
-  Users, DollarSign, PieChart, TrendingUp, Briefcase, 
-  UserPlus, Target, Megaphone, Gavel, Tool
+  Users, DollarSign, TrendingUp, Briefcase, Megaphone, 
+  Target, Rocket, ChevronRight, BarChart3, PieChart
 } from 'lucide-react';
 
-export default function OrcamentoEquipe() {
-  const equipeNecessaria = [
-    { setor: "Comercial (Camarotes/Cotas)", profissionais: ["1 Gestor Comercial Senior", "4 Executivos de Vendas", "1 Concierge VIP"], investimento: "R$ 45k/mês", impacto: "Geração de Receita Direta" },
-    { setor: "Marketing (Otimização)", profissionais: ["1 Diretor de Arte", "1 Gestor de Tráfego Pago", "1 Community Manager", "1 Videomaker"], investimento: "R$ 38k/mês", impacto: "Venda de Ingressos e Branding" },
-    { setor: "Backoffice & Jurídico", profissionais: ["1 Advogado Especialista (14.133)", "1 Controller Financeiro"], investimento: "R$ 20k/mês", impacto: "Blindagem do CPF e Compliance" },
-    { setor: "Operacional (Arena)", profissionais: ["Equipe Técnica ACR", "Manejo Gutt Bulls", "Staff Tum Dum"], investimento: "Sob Demanda", impacto: "Entrega do Espetáculo" }
+export default function OrcamentoEquipePage() {
+  const cargos = [
+    { 
+      setor: "Comercial & Growth", 
+      status: "Crítico",
+      obs: "Foco total em venda de camarotes e cotas master",
+      vagas: ["1 Diretor Comercial (Key Accounts)", "3 Executivos de Vendas (Hunter)", "1 Gestor de SDR/CRM"]
+    },
+    { 
+      setor: "Marketing & Publicidade", 
+      status: "Defasado / Urgente",
+      obs: "Necessário para sustentar a narrativa 360 e venda de ingressos",
+      vagas: ["1 Gestor de Tráfego Pago", "1 Diretor de Arte / Branding", "1 Social Media & Community", "1 Videomaker In-house"]
+    },
+    { 
+      setor: "Backoffice & Jurídico", 
+      status: "Operacional",
+      obs: "Manutenção da conformidade Lei 14.133",
+      vagas: ["1 Controller Financeiro", "1 Analista de Contratos Públicos"]
+    }
   ];
 
   return (
-    <div className="bg-[#050505] text-white min-h-screen font-sans pb-20">
-      {/* HEADER SIMPLES */}
-      <nav className="p-8 border-b border-white/5 flex justify-between items-center bg-black/50 sticky top-0 z-50 backdrop-blur-md">
-        <h2 className="text-2xl font-black italic text-orange-500 uppercase tracking-tighter">Budget & Team <span className="text-white">2026</span></h2>
-        <div className="text-[10px] font-black uppercase text-zinc-500 border border-zinc-800 px-4 py-2 rounded-full">Confidencial - Board Only</div>
+    <div className="bg-[#050505] text-white min-h-screen font-sans pb-20 selection:bg-orange-500">
+      <nav className="p-8 border-b border-white/5 flex justify-between items-center bg-black/50 backdrop-blur-md sticky top-0 z-50">
+        <div className="flex items-center gap-4">
+          <img src="/assets/logo lovi.jfif" className="h-6 invert opacity-50" />
+          <h2 className="text-xl font-black italic uppercase tracking-tighter">Budget & <span className="text-orange-500">Team 2026</span></h2>
+        </div>
+        <div className="text-[10px] font-black uppercase text-zinc-500 border border-zinc-800 px-4 py-2 rounded-full">Documento de Estratégia Interna</div>
       </nav>
 
-      <main className="max-w-7xl mx-auto px-10 pt-20">
-        <header className="mb-20">
-          <h1 className="text-6xl font-black uppercase italic mb-6 leading-none">Previsão <br/><span className="text-orange-500">Orçamentária.</span></h1>
-          <p className="text-zinc-500 max-w-2xl font-bold uppercase text-xs tracking-widest">Estruturação de Equipe Holding e Projeção de Investimento para Implantação do Ecossistema.</p>
+      <main className="max-w-7xl mx-auto px-6 pt-20">
+        <header className="mb-20 space-y-4">
+          <h1 className="text-6xl md:text-8xl font-black uppercase italic leading-none">Previsão <br/><span className="text-orange-500 underline">Orçamentária.</span></h1>
+          <p className="text-zinc-500 max-w-2xl font-bold uppercase text-xs tracking-[0.3em]">Análise de Viabilidade, Reestruturação de Marketing e Célula de Vendas.</p>
         </header>
 
-        {/* CARDS DE INVESTIMENTO RÁPIDO */}
-        <div className="grid md:grid-cols-3 gap-6 mb-20">
-          {[
-            { label: "Capex Implantação", valor: "R$ 450k", desc: "Software Tum Dum + Branding", icon: <Tool className="text-orange-500"/> },
-            { label: "Opex Mensal Equipe", valor: "R$ 103k", desc: "Folha de Pagamento Especializada", icon: <Users className="text-orange-500"/> },
-            { label: "Target de Receita", valor: "R$ 3.2M", desc: "Projeção Cotas + Camarotes", icon: <TrendingUp className="text-green-500"/> }
-          ].map((card, i) => (
-            <div key={i} className="bg-zinc-900/50 p-10 rounded-[2.5rem] border border-white/5 space-y-4 hover:border-orange-600/50 transition-colors">
-              <div className="bg-black/50 w-12 h-12 rounded-xl flex items-center justify-center">{card.icon}</div>
-              <div>
-                <p className="text-[10px] font-black text-zinc-500 uppercase tracking-widest">{card.label}</p>
-                <p className="text-4xl font-black italic">{card.valor}</p>
-                <p className="text-[10px] font-bold text-zinc-600 uppercase mt-2">{card.desc}</p>
-              </div>
-            </div>
-          ))}
+        {/* DASHBOARD DE INVESTIMENTO */}
+        <div className="grid md:grid-cols-3 gap-8 mb-24">
+          <div className="p-10 bg-zinc-900/40 rounded-[3rem] border border-white/5 hover:border-orange-500/30 transition-all">
+            <PieChart className="text-orange-500 mb-6" size={40} />
+            <h4 className="text-zinc-500 font-black uppercase text-[10px] tracking-widest">Opex Mensal (Equipe)</h4>
+            <p className="text-4xl font-black italic mt-2">R$ 115.000</p>
+            <p className="text-[10px] text-zinc-600 font-bold uppercase mt-4">Custo fixo para operação de alto nível.</p>
+          </div>
+          <div className="p-10 bg-zinc-900/40 rounded-[3rem] border border-white/5 hover:border-orange-500/30 transition-all">
+            <Rocket className="text-orange-500 mb-6" size={40} />
+            <h4 className="text-zinc-500 font-black uppercase text-[10px] tracking-widest">Budget Marketing / Mês</h4>
+            <p className="text-4xl font-black italic mt-2">R$ 45.000</p>
+            <p className="text-[10px] text-zinc-600 font-bold uppercase mt-4">Ads, Produção de Conteúdo e PR.</p>
+          </div>
+          <div className="p-10 bg-orange-600 rounded-[3rem] shadow-[0_0_50px_rgba(234,88,12,0.2)]">
+            <TrendingUp className="text-white mb-6" size={40} />
+            <h4 className="text-white/70 font-black uppercase text-[10px] tracking-widest">Breakeven Estimado</h4>
+            <p className="text-4xl font-black italic mt-2">45 Dias</p>
+            <p className="text-[10px] text-white/50 font-bold uppercase mt-4">Com a venda de 1 Cota Master.</p>
+          </div>
         </div>
 
-        {/* TABELA DE EQUIPE E SETORES */}
+        {/* REESTRUTURAÇÃO DE EQUIPE */}
         <section className="space-y-12">
-          <div className="flex items-center gap-4 border-b border-zinc-800 pb-6">
-            <UserPlus className="text-orange-500" />
-            <h2 className="text-3xl font-black uppercase italic">Estrutura de Holding (Time Lovi)</h2>
+          <div className="flex items-center gap-4">
+            <Users className="text-orange-500" />
+            <h2 className="text-3xl font-black uppercase italic">Necessidade de Contratação</h2>
           </div>
-          
-          <div className="grid gap-4">
-            {equipeNecessaria.map((item, i) => (
-              <div key={i} className="grid md:grid-cols-4 items-center p-8 bg-zinc-900/30 rounded-3xl border border-white/5 hover:bg-zinc-900/60 transition-all group">
-                <div className="font-black uppercase text-orange-500 text-sm italic">{item.setor}</div>
-                <div className="col-span-1 space-y-1">
-                  {item.profissionais.map((p, idx) => (
-                    <p key={idx} className="text-xs font-bold text-zinc-300">{p}</p>
-                  ))}
-                </div>
-                <div className="text-center font-black italic text-xl group-hover:text-white transition-colors">{item.investimento}</div>
-                <div className="text-right">
-                  <span className="text-[10px] font-black uppercase bg-orange-600/10 text-orange-500 px-4 py-2 rounded-full border border-orange-600/20">
-                    {item.impacto}
-                  </span>
+
+          <div className="grid gap-6">
+            {cargos.map((c, i) => (
+              <div key={i} className="bg-zinc-900/20 border border-white/5 p-10 rounded-[3rem] hover:bg-zinc-900/40 transition-all">
+                <div className="flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+                  <div className="space-y-2">
+                    <span className="bg-orange-600/10 text-orange-500 text-[10px] font-black px-4 py-1 rounded-full border border-orange-500/20">{c.status}</span>
+                    <h3 className="text-3xl font-black uppercase italic">{c.setor}</h3>
+                    <p className="text-zinc-500 text-xs font-bold uppercase">{c.obs}</p>
+                  </div>
+                  <div className="grid grid-cols-1 gap-2">
+                    {c.vagas.map((v, idx) => (
+                      <div key={idx} className="flex items-center gap-3 text-xs font-black uppercase text-zinc-400">
+                        <ChevronRight size={14} className="text-orange-500" /> {v}
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </div>
             ))}
           </div>
         </section>
 
-        {/* DISCURSO PARA A DIRETORIA */}
-        <section className="mt-32 p-16 bg-orange-600 rounded-[4rem] relative overflow-hidden">
-          <div className="relative z-10 grid md:grid-cols-2 gap-10 items-center">
-            <div>
-              <h3 className="text-4xl font-black uppercase italic mb-6">Por que investir na <br/>equipe agora?</h3>
-              <p className="text-sm font-bold leading-relaxed uppercase opacity-80">
-                O marketing defasado hoje é o seu maior custo oculto. Ao profissionalizar o comercial e o tráfego pago, transformamos o evento de uma "festa" em um "ativo financeiro previsível". 
-                <br/><br/>
-                O custo da equipe se paga com a venda das primeiras 2 cotas Master ou 30% dos camarotes.
-              </p>
+        {/* JUSTIFICATIVA ESTRATÉGICA */}
+        <section className="mt-32 p-12 md:p-20 bg-white text-black rounded-[4rem] grid md:grid-cols-2 gap-20 items-center">
+          <div className="space-y-8">
+            <h2 className="text-6xl font-black uppercase italic leading-none">O Custo do <br/><span className="text-orange-600">Amadorismo.</span></h2>
+            <p className="text-zinc-600 text-lg font-medium leading-relaxed italic">
+              Um marketing defasado não é apenas uma falha visual; é dinheiro deixado na mesa. Cada dia sem um gestor de tráfego qualificado e uma equipe comercial agressiva aumenta o custo de aquisição do cliente e diminui a percepção de valor dos nossos camarotes.
+            </p>
+          </div>
+          <div className="space-y-6">
+            <div className="flex gap-4 p-6 border border-zinc-200 rounded-3xl items-center">
+              <BarChart3 className="text-orange-600" />
+              <div><h5 className="font-black uppercase text-sm">Escalabilidade Comercial</h5><p className="text-[10px] font-bold text-zinc-400 uppercase">Foco em vender o evento inteiro 3 meses antes.</p></div>
             </div>
-            <div className="bg-black/20 p-8 rounded-3xl backdrop-blur-md border border-white/10">
-               <h4 className="font-black uppercase italic text-xl mb-4 text-white">Próximos Passos (30 dias):</h4>
-               <ul className="space-y-3 text-[10px] font-black uppercase">
-                 <li className="flex gap-2"><ArrowRight size={14}/> Contratação imediata do Gestor de Tráfego.</li>
-                 <li className="flex gap-2"><ArrowRight size={14}/> Auditoria comercial na ACR/Gutt Bulls.</li>
-                 <li className="flex gap-2"><ArrowRight size={14}/> Setup do Dashboard Tum Dum em tempo real.</li>
-               </ul>
+            <div className="flex gap-4 p-6 border border-zinc-200 rounded-3xl items-center">
+              <Megaphone className="text-orange-600" />
+              <div><h5 className="font-black uppercase text-sm">Domínio da Narrativa</h5><p className="text-[10px] font-bold text-zinc-400 uppercase">Marketing 360 que justifica o preço premium.</p></div>
             </div>
           </div>
         </section>
       </main>
+
+      <footer className="mt-40 text-center py-20 border-t border-white/5">
+         <p className="text-orange-500 font-black italic text-2xl uppercase">Felipe Makarios</p>
+         <p className="text-zinc-700 font-black uppercase text-[10px] tracking-[0.5em] mt-2">Plano de Expansão Lovi 2026</p>
+      </footer>
     </div>
   );
 }
