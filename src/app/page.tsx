@@ -1,73 +1,54 @@
 "use client";
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Shield, TrendingUp, Users, Zap, ChevronRight, Mail } from 'lucide-react';
+import { Youtube, Instagram, Tv, Radio, Newspaper, Users, Zap, ChevronRight } from 'lucide-react';
 
-export default function Lovi360LandingPage() {
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: { opacity: 1, transition: { staggerChildren: 0.2 } }
-  };
-
-  const itemVariants = {
-    hidden: { y: 20, opacity: 0 },
-    visible: { y: 0, opacity: 1 }
-  };
-
+export default function MarketingShowcase2026() {
   return (
-    <div className="min-h-screen bg-[#0a0a0a] text-white selection:bg-orange-500 overflow-x-hidden">
-      <div className="fixed inset-0 z-0">
-        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-orange-900/20 blur-[120px] rounded-full" />
-        <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-blue-900/10 blur-[120px] rounded-full" />
-      </div>
-
-      <nav className="fixed top-0 w-full z-50 backdrop-blur-md border-b border-white/5 py-4 px-8 flex justify-between items-center">
-        <div className="text-2xl font-black tracking-tighter italic">LOVI<span className="text-orange-500">2026</span></div>
-        <div className="hidden md:flex gap-8 text-xs font-bold uppercase tracking-widest text-gray-400">
-          <span>EstratÈgia</span><span>Estrutura</span><span>Calculadora de Churrasco</span>
-        </div>
+    <div className="min-h-screen bg-black text-white selection:bg-orange-500 overflow-x-hidden font-sans">
+      <nav className="fixed top-0 w-full z-50 backdrop-blur-xl border-b border-white/10 py-6 px-10 flex justify-between items-center">
+        <div className="text-3xl font-black italic tracking-tighter">LOVI<span className="text-orange-500 underline decoration-2">STRATEGY</span></div>
+        <div className="bg-orange-600 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest animate-pulse font-bold">SOBERANIA 2026</div>
       </nav>
 
-      <section className="relative pt-32 pb-20 px-6 z-10 text-center">
-        <motion.span initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="px-4 py-1 rounded-full border border-orange-500/30 bg-orange-500/10 text-orange-500 text-xs font-bold uppercase mb-6 inline-block">Soberania Operacional</motion.span>
-        <motion.h1 initial={{ scale: 0.9, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} className="text-6xl md:text-8xl font-black mb-6 tracking-tighter">PLANEJAMENTO <br /><span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-red-600">360 GRADOS</span></motion.h1>
-        <p className="text-gray-400 text-lg max-w-2xl mx-auto">Desenvolvido por Felipe Makarios.</p>
-      </section>
-
-      <section className="py-10 px-6 z-10 relative">
-        <div className="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="rounded-2xl overflow-hidden border border-white/10 shadow-2xl aspect-video">
-            <video autoPlay muted loop playsInline className="w-full h-full object-cover"><source src="/assets/video1.mp4" type="video/mp4" /></video>
-          </div>
-          <div className="rounded-2xl overflow-hidden border border-white/10 shadow-2xl aspect-video">
-            <video autoPlay muted loop playsInline className="w-full h-full object-cover"><source src="/assets/video2.mp4" type="video/mp4" /></video>
-          </div>
+      <section className="relative min-h-screen flex items-center justify-center pt-20">
+        <div className="relative z-10 text-center px-6">
+          <motion.h1 initial={{ opacity: 0, y: 50 }} animate={{ opacity: 1, y: 0 }} className="text-7xl md:text-9xl font-black tracking-tighter leading-[0.8] mb-8">
+            MARKETING <br /> <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-500 to-red-600">DOMINATION</span>
+          </motion.h1>
+          <p className="text-xl md:text-2xl text-gray-400 max-w-3xl mx-auto font-light">
+            N√£o fazemos propaganda. Criamos <strong>Soberania Cultural</strong>. <br/> Estrat√©gia assinada por Felipe Makarios.
+          </p>
         </div>
       </section>
 
-      <section className="py-24 px-6 z-10 relative max-w-6xl mx-auto">
-        <motion.div variants={containerVariants} initial="hidden" whileInView="visible" className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          <motion.div variants={itemVariants} className="p-8 rounded-3xl bg-white/5 border border-white/10 group hover:border-orange-500/50 transition-all">
-            <Zap className="text-orange-500 mb-6" size={40} />
-            <h4 className="text-xl font-bold mb-4">Comercial & Growth</h4>
-            <ul className="text-sm text-gray-400 space-y-2"><li>ï Head de Expans„o B2G</li><li>ï Gestor de Contratos</li><li>ï SDR EstratÈgico</li></ul>
-          </motion.div>
-          <motion.div variants={itemVariants} className="p-8 rounded-3xl bg-white/5 border border-white/10 group hover:border-orange-500/50 transition-all">
-            <Shield className="text-orange-500 mb-6" size={40} />
-            <h4 className="text-xl font-bold mb-4">Backoffice</h4>
-            <ul className="text-sm text-gray-400 space-y-2"><li>ï Controller Financeiro</li><li>ï JurÌdico Especializado</li><li>ï RH & Cultura</li></ul>
-          </motion.div>
-          <motion.div variants={itemVariants} className="p-8 rounded-3xl bg-white/5 border border-white/10 group hover:border-orange-500/50 transition-all">
-            <Users className="text-orange-500 mb-6" size={40} />
-            <h4 className="text-xl font-bold mb-4">Tecnologia</h4>
-            <ul className="text-sm text-gray-400 space-y-2"><li>ï Fullstack Developer</li><li>ï Analista BI</li><li>ï Especialista Tum Dum</li></ul>
-          </motion.div>
-        </motion.div>
+      <section className="py-32 bg-zinc-950 px-6">
+        <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-20 items-center">
+            <div className="bg-zinc-900 rounded-xl border border-white/10 p-4 shadow-2xl">
+                <div className="aspect-video bg-black rounded-lg overflow-hidden relative">
+                   <video autoPlay muted loop className="w-full h-full object-cover opacity-60"><source src="/assets/video1.mp4" type="video/mp4" /></video>
+                   <div className="absolute inset-0 flex items-center justify-center"><Youtube size={80} className="text-red-600" /></div>
+                </div>
+                <p className="mt-4 text-sm font-bold text-gray-400 uppercase text-center">YouTube & Google Ads Presence</p>
+            </div>
+
+            <div className="p-8 border-l-4 border-orange-500 bg-white/5">
+                <h3 className="text-4xl font-black mb-6 uppercase italic">Ativa√ß√£o Omnichannel</h3>
+                <p className="text-gray-400 mb-8">Nossa estrat√©gia n√£o √© linear. Estamos onde o povo est√°: TV, R√°dio, Jornal e no celular de cada influenciador relevante do pa√≠s.</p>
+                <div className="grid grid-cols-2 gap-4">
+                    <div className="flex items-center gap-2 text-sm font-bold"><Tv className="text-orange-500"/> TV PRIME TIME</div>
+                    <div className="flex items-center gap-2 text-sm font-bold"><Radio className="text-orange-500"/> R√ÅDIO BLITZ</div>
+                    <div className="flex items-center gap-2 text-sm font-bold"><Newspaper className="text-orange-500"/> PR NACIONAL</div>
+                    <div className="flex items-center gap-2 text-sm font-bold"><Instagram className="text-orange-500"/> INFLUENCER SQUAD</div>
+                </div>
+            </div>
+        </div>
       </section>
 
-      <footer className="py-20 border-t border-white/5 px-6 text-center">
-        <h5 className="text-2xl font-bold italic">FELIPE MAKARIOS</h5>
-        <p className="text-orange-500 mt-2">felipe@lovidobrasil.com.br</p>
+      <footer className="py-20 border-t border-white/10 px-6 text-center">
+        <h2 className="text-5xl font-black italic mb-4 uppercase">Let's Scale</h2>
+        <p className="text-gray-400 mb-10 text-xl font-bold">Felipe Makarios | Head de Marketing & Estrat√©gia</p>
+        <div className="inline-block bg-white text-black px-12 py-5 rounded-full font-black text-lg">AGENDAR BRIEFING</div>
       </footer>
     </div>
   );
